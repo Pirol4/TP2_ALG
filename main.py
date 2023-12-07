@@ -21,6 +21,7 @@ def getGraph(file_path):
     return graph
 
 def main():
+    
     problem = sys.argv[1]
     graph = getGraph(problem)
 
