@@ -1,7 +1,11 @@
+## -----------------------------------------------------------------------------------------------------
+##  Arquivo     : main.py
+##  Conteúdo    : Implementação da função que chama todos os métodos
+##  Aluno       : Filipe Pirola Santos
+## -----------------------------------------------------------------------------------------------------
 import Christofides as C
 import TwiceAroundTheTree as T
-#import BranchAndBound as B
-#import teste as t
+import BranchAndBound as B
 import tsplib95 as tsp
 import sys
     
@@ -19,10 +23,9 @@ def main():
     problem = sys.argv[1]
     graph = getGraph(problem)
     
-    print("RESULTADO: ", C.solveTSP(graph))
     print("RESULTADO: ", T.solveTSP(graph))
-    #print("RESULTADO: ", B.solveTSP(graph))
-    #print("RESULTADO: ", t.solveTSP(graph))
+    print("RESULTADO: ", C.solveTSP(graph))
+    print("RESULTADO: ", B.solveTSP(graph))
 
 main()
     
