@@ -42,6 +42,9 @@ def christofides(graph, n):
         if j not in tour:
             tour.append(j)
 
+    # 7. Ele precisa voltar para a posição inicial
+    tour.append(tour[0])
+    
     # Calcula o tempo total de execução do algoritmo
     endTime = time.time()
     finalTime = endTime - startTime  
@@ -52,17 +55,20 @@ def christofides(graph, n):
 
     return tour, finalTime, finalMemory
 
+## @brief Calculate the path weight
 def getPathWeight(graph, path):
     weight = 0
     for i in range(len(path) - 1):
         weight += graph[path[i]][path[i+1]]['weight']
     return weight
 
+## @brief General function to find the answer
 def solveTSP(graph):
     n = graph.number_of_nodes()
     tour, time, memory = christofides(graph, n)
     answer = getPathWeight(graph, tour)
     print("-----------------------")
+    print("Christofides")
     print("Tempo de execução: ", time)
     print("Custo de memória: ", memory)
     return answer 
